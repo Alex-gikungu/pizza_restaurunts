@@ -34,9 +34,14 @@ The project structure is organized as follows:
 ## Setup and Installation
 
 1.Clone the repository:
-    ```bash 
-    git clone https://github.com/your-username/pizza-restaurant-flask-api.git
-     cd pizza-restaurant-flask-api
+
+
+  git clone https://github.com/Alex-gikungu/pizza_restaurunts.git
+
+
+  cd pizza-restaurant-flask-api
+
+  
 
 2.Initialize the database and apply migrations:
 
