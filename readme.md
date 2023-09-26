@@ -33,24 +33,30 @@ The project structure is organized as follows:
 
 ## Setup and Installation
 
-1.Clone the repository:
+1.Clone the repository: 
+
+      git clone https://github.com/Alex-gikungu/pizza_restaurunts.git
 
 
-  git clone https://github.com/Alex-gikungu/pizza_restaurunts.git
+      cd pizza-restaurant-flask-api
 
 
-  cd pizza-restaurant-flask-api
-
-  
 
 2.Initialize the database and apply migrations:
 
-flask db init
-flask db migrate -m "Initial migration"
-flask db upgrade
+  flask db init
+
+
+  flask db migrate -m "Initial migration"
+
+
+  flask db upgrade
+
+
 
 ## Usage
-flask run 
+
+      flask run 
 
 ## Endpoints
 - GET /restaurants: Get a list of all restaurants.
