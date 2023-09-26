@@ -16,19 +16,19 @@ def rests():
 
     return jsonify(restaurants)
 
-# @app.route('/pizzas',methods=['GET'])
-# def pizzas():
-#     pizzas = []
-#     for pizza in Pizza.query.all():
-#         pizza_object = {
-#             'id': pizza.id,
-#             'name':pizza.name,
-#             'ingredients':pizza.ingredients
-#         }
+@app.route('/pizzas',methods=['GET'])
+def pizzas():
+    pizzas = []
+    for pizza in Pizza.query.all():
+        pizza_object = {
+            'id': pizza.id,
+            'name':pizza.name,
+            'ingredients':pizza.ingredients
+        }
 
-#         pizzas.append(pizza_object)
+        pizzas.append(pizza_object)
 
-#     return jsonify(pizzas)
+    return jsonify(pizzas)
 
 
 # @app.route('/new_restaurant', methods=["POST"])
