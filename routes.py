@@ -31,52 +31,52 @@ def pizzas():
     return jsonify(pizzas)
 
 
-# @app.route('/new_restaurant', methods=["POST"])
-# def new_restaurant():
-#     rest = request.get_json()
+@app.route('/new_restaurant', methods=["POST"])
+def new_restaurant():
+    rest = request.get_json()
 
-#     new_rest = Restaurant(
-#         name = rest['name'],
-#         address = rest['address']
-#     )
+    new_rest = Restaurant(
+        name = rest['name'],
+        address = rest['address']
+    )
 
-#     db.session.add(new_rest)
-#     db.session.commit()
+    db.session.add(new_rest)
+    db.session.commit()
 
-#     return jsonify({
-#         "id": new_rest.id,
-#         "name": new_rest.name,
-#         "address": new_rest.address
-#     }), 201
-
-
-# @app.route('/restaurants/<int:id>', methods=['PUT'])
-# def update_restaurant(id):
-#     rest = request.get_json()
-
-#     existing_rest = Restaurant.query.get(id)
-#     existing_rest.name = rest['name']
-#     existing_rest.address = rest['address']
-
-#     db.session.commit()
-
-#     return jsonify({
-#         "id": existing_rest.id,
-#         "name": existing_rest.name,
-#         "address": existing_rest.address
-#     }), 200
+    return jsonify({
+        "id": new_rest.id,
+        "name": new_rest.name,
+        "address": new_rest.address
+    }), 201
 
 
-# @app.route('/restaurants/<int:id>', methods=['DELETE'])
-# def delete(id):
-#     rest = Restaurant.query.get(id)
-#     db.session.delete(rest)
-#     db.session.commit()
+@app.route('/restaurants/<int:id>', methods=['PUT'])
+def update_restaurant(id):
+    rest = request.get_json()
 
-#     return jsonify({
-#         "id": rest.id,
-#         "name": rest.name,
-#         "address": rest.address
-#     }), 201
+    existing_rest = Restaurant.query.get(id)
+    existing_rest.name = rest['name']
+    existing_rest.address = rest['address']
+
+    db.session.commit()
+
+    return jsonify({
+        "id": existing_rest.id,
+        "name": existing_rest.name,
+        "address": existing_rest.address
+    }), 200
+
+
+@app.route('/restaurants/<int:id>', methods=['DELETE'])
+def delete(id):
+    rest = Restaurant.query.get(id)
+    db.session.delete(rest)
+    db.session.commit()
+
+    return jsonify({
+        "id": rest.id,
+        "name": rest.name,
+        "address": rest.address
+    }), 201
 
 
