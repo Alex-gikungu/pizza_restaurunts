@@ -1,25 +1,20 @@
-# from flask import jsonify,request
-# from app import app
-# from models import db,Restaurant, Pizza, RestaurantPizza
+from flask import jsonify,request
+from app import app
+from models import db,Restaurant, Pizza, RestaurantPizza
 
+@app.route('/restaurants',methods=['GET'])
+def rests():
+    restaurants = []
+    for rest in Restaurant.query.all():
+        user_object = {
+            'id': rest.id,
+            'address':rest.address,
+            'name':rest.name
+        }
 
-# @app.route('/')
-# def home():
-#     return'<h1>welcome </h1>'
+        restaurants.append(user_object)
 
-# @app.route('/restaurants')
-# def rests():
-#     restaurants = []
-#     for rest in Restaurant.query.all():
-#         user_object = {
-#             'id': rest.id,
-#             'address':rest.address,
-#             'name':rest.name
-#         }
-
-#         restaurants.append(user_object)
-
-#     return jsonify(restaurants)
+    return jsonify(restaurants)
 
 # @app.route('/pizzas',methods=['GET'])
 # def pizzas():
